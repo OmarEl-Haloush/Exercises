@@ -1,7 +1,12 @@
 import time
-
-N=input('Compute all Prime numbers <N\nN= ')
+import sys
+# sys.argv is a list with the command-line arguments. sysv.arg[0] is the name of Python script
+print('Number of arguments:', len(sys.argv), 'arguments.')
+print('Argument List:', str(sys.argv))
 T1=time.perf_counter()
+N=sys.argv[1]
+file=sys.argv[2]
+print(N)
 n=int(N)
 
 print(type(n),n)
@@ -24,7 +29,7 @@ for i in string:
         else:
             i+=1
 print(string)
-fout=open('prime.dat','w')
+fout=open(sys.argv[2],'w')
 i=0
 for i in string:
     fout.write(str(i))
